@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
     endDateTime.setHours(endDateTime.getHours() + 1);
     const formattedEnd = endDateTime.toISOString();
 
+    console.log(formattedEnd, formattedStart)
     // Step 1: Create event-type
     const eventTypePayload = {
       length: 60,
@@ -74,6 +75,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ booking: bookingResponse.data }, { status: 201 });
   } catch (error) {
+    console.log(error.response?.data);
     return NextResponse.json(
       {
         error: "Failed to create booking",
