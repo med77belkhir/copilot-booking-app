@@ -1,0 +1,32 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Room A",
+      "status": "available",
+      "capacity": 10,
+      "amenities": ["projector", "whiteboard"]
+    },
+    {
+      "id": 2,
+      "name": "Room B",
+      "status": "available",
+      "capacity": 8,
+      "amenities": ["TV", "conference phone"]
+    },
+    {
+      "id": 3,
+      "name": "Room C",
+      "status": "available",
+      "capacity": 15,
+      "amenities": ["projector", "whiteboard", "video conferencing"]
+    },
+    {
+      "id": 4,
+      "name": "Room D",
+      "status": "booked",
+      "capacity": 12,
+      "amenities": ["TV", "whiteboard"]
+    }
+  ]
+}
