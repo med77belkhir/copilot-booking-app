@@ -23,6 +23,7 @@ const RoomBookingContext = createContext<RoomBookingContextType | undefined>(
 
 export function RoomBookingProvider({ children }: { children: ReactNode }) {
   const [bookings, setBookings] = useState<Booking[]>([]);
+  const [rooms, setRooms] = useState([]);
 
   const addBooking = async (
     room: string,
@@ -77,6 +78,11 @@ export function RoomBookingProvider({ children }: { children: ReactNode }) {
         booking.id === id ? { ...booking, status } : booking
       )
     );
+  };
+
+  const fetchAvailableRooms = async (date: string) => {
+    const response = await axios.get(`/api/rooms?date=${date}`);
+    return response.data;
   };
 
   return (
